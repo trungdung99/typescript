@@ -1,20 +1,18 @@
 import { useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
-import Showinfo from './Showinfo'
+import Showinfo from './components/Showinfo'
+import { ProductType } from './types/products';
 
-type TProduct = {
-  id: number,
-  name: string,
-}
 
 function App() {
-  const [count, setCount] = useState<number>(0);
-  const [product, setProduct] = useState<TProduct[]>([{id:1, name: "Pham Trung Dung"}])
-
+  const [info, setInfo] = useState<ProductType>({
+    name: "Dung",
+    age: 22
+  });
   return (
     <div className="App">
-      <Showinfo name="Pham Trung Dung" />
+      <Showinfo info ={info}/>
     </div>
   )
 }
